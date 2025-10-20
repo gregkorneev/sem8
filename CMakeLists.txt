@@ -34,3 +34,12 @@ else()
     target_compile_options(app PRIVATE -march=native)
   endif()
 endif()
+
+
+# --- Extra executable: choose_struct (Выбор структуры данных) ---
+add_executable(choose_struct src/choose_structure.cpp)
+if (MSVC)
+  target_compile_options(choose_struct PRIVATE /O2 /DNDEBUG)
+else()
+  target_compile_options(choose_struct PRIVATE -O3 -DNDEBUG)
+endif()
